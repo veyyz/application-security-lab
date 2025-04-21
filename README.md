@@ -59,13 +59,14 @@ server/
 
 ## 🦿 Part 2. Setting up and running your project
 0. Create an account at github.com/signup and login for the next steps.
-1. Open this repo in a new **codespace** by clicking on the green `< > Code` button (above) then selecting the **Codespaces** tab and clicking on **Create codespace on main**. This will start your codespace.
-2. Inside your codespace, open your **Terminal** in your codespace by clicking on the ☰ **hamburger icon** at the top-left, then clicking on **View** then **Terminal**. ```Note: Your terminal may already be open by default.```
-3. Your **Explorer** (on the left side of your codespace) lists all of your project files and directories. You can also type `ls -al` into your terminal to see your file structure at any time. In your Explorer, **right-click** README.md and click **Open Preview**. That will open these directions in your codespace so you can continue in the same window.
-4. In your **Terminal**, run your project code by typing the following command: `npm start` into your terminal. The `start` script is defined in line 7 of your **package.json** file and runs the command 'node ./index.js' for you. This will begin the execution of your program.
-5. In your **Terminal**, inspect the output of the program and make sure you see the text '**Server listening on Port 3000**' as the last line of output.
-6. If your project ran successfully, you should also **see a popup** in the bottom-right of your terminal with the options *Make Public* and *Open in Browser*. **Click** the **Make Public** button then **click** the **Ports (1)** tab next to *Terminal*, **right-click** the url listed under *Forwarded Addresses* and click **Copy Local Address**
-7. **Paste** the address that you just copied ***into a different tab or window*** and you should see a website with the title "Welcome to Cybersecurity..." and a form to login. If you do not see the website at this point **please ask for help as you will not be able to continue**.
+1. Fork this repository by clicking the fork button at the Top Right of this repository. You will be taken to another screen and can accept the default field values. You just created your own copy of this entire project. From now on make sure you are referencing your version of the project by verifying the repo name is <your-username>/application-security-lab.
+2. Open your repo in a new **codespace** by clicking on the green `< > Code` button (above) then selecting the **Codespaces** tab and clicking on **Create codespace on main**. This will start your codespace.
+3. Inside your codespace, open your **Terminal** in your codespace by clicking on the ☰ **hamburger icon** at the top-left, then clicking on **View** then **Terminal**. ```Note: Your terminal may already be open by default.```
+4. Your **Explorer** (on the left side of your codespace) lists all of your project files and directories. You can also type `ls -al` into your terminal to see your file structure at any time. In your Explorer, **right-click** README.md and click **Open Preview**. That will open these directions in your codespace so you can continue in the same window.
+5. In your **Terminal**, run your project code by typing the following command: `npm start` into your terminal. The `start` script is defined in line 7 of your **package.json** file and runs the command 'node ./index.js' for you. This will begin the execution of your program.
+6. In your **Terminal**, inspect the output of the program and make sure you see the text '**Server listening on Port 3000**' as the last line of output.
+7. If your project ran successfully, you should also **see a popup** in the bottom-right of your terminal with the options *Make Public* and *Open in Browser*. **Click** the **Make Public** button then **click** the **Ports (1)** tab next to *Terminal*, **right-click** the url listed under *Forwarded Addresses* and click **Copy Local Address**
+8. **Paste** the address that you just copied ***into a different tab or window*** and you should see a website with the title "Welcome to Cybersecurity..." and a form to login. If you do not see the website at this point **please ask for help as you will not be able to continue**.
 
 
 ## 🧪 Part 3. Interactive Application Testing
