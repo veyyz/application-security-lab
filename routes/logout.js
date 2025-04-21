@@ -6,7 +6,7 @@ const server = express.Router();
 server.post('/logout', (req, res) => {
     
     // Clear the authentication cookie
-    res.clearCookie('webappCookie');
+    res.clearCookie('webAppCookie');
     
     // Redirect the user to the login page or another appropriate location
     res.redirect('/');
