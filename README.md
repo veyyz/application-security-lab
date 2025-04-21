@@ -87,13 +87,13 @@ Performing interactive testing means trying trying to find flaws in a running ap
 8. This program must have been written by a really bad AI because not only are passwords stored in plain-text, but they are using a very insecure compare function that allows us to inject any code that we want. The `eval()` function interprets its string parameter as code and executes it as a function. This allows us to inject any function we want in the '`username`' field. 
 9. Navigate back to `/pages/homepage.html` and paste the following string into the username field:
 ```
-" === "") && (() => {console.log("all your base are belong to us"); throw new Error(users.reduce((users, user) => users+="user: " + user.username + " pass: " + user.password + "<br/>",""))})() && ("
+" === "") && (() => {throw new Error(users.reduce((users, user) => users+="user: " + user.username + " pass: " + user.password + "<br/>",""))})() && ("
 ```
 this string will get interpreted as code and everything outside the &&'s will preserve our syntax so we can do what we really want which is throw an error that prints out all of the usernames and passwords to the error message we found in step 7. Enter any random text into the password field and hit enter.
 ### The Devious Path ☠️ - Let's see if we can take the site down all together
 10. Great! We've got our usernames and passwords, let's crash this sucker and get out of here. Paste the following string into the username field:
 ```
-" === "") && process.exit() && ("
+" === "") && (() => { console.log("all your base are belong to us"); process.exit()})() && ("
 ```
 Again, everything outside of the &&'s will preserve our sytax so we can force the application to exit via `process.exit()`
 
@@ -114,12 +114,12 @@ As a developer, even if your Happy Path works as expected, you still have to han
 
 Let's start to fix some of these issues. In order to track our progress, work with other developers, and prevent creating additional bugs, we will use a feature of Git called 'branching'. This allows mutltiple developers, or even a singular developer, to work on multiple issues at the same time efficiently.
 
-```Note: While vulnerability #4. Insecure function calls create potential for inject attack is the most important vulnerability to patch first, we're going to patch #1-3 first, so we can illustrate and verify that our fixes work.```
+```Note: While vulnerability "#4. Insecure function calls create potential for inject attack" is the most important vulnerability to patch first, we're going to patch #1-3 first, so we can illustrate and verify that our fixes work.```
 
 ### Plain-text Passwords 🤦‍♂️  
 Even with all of the other vulnerabilities, we could have avoided the worst case if all of the passwords weren't stored in plan-text. We're going to fix this vulnerability first since it puts our users' privacy and, therefore, safety at risk. 
 
-1. Open your terminal and make sure you are on the '`main`' branch by typing the following command:
+1. Go back to your codespace and type the following command into your Terminal:
 ```
 git branch
 ```
@@ -129,7 +129,7 @@ your output should look similar to this:
 * main
 @prof0x ➜ /workspaces/prof0x-server (main) $ 
 ```
-the `*` next to `main` denotes that it is your current branch
+the `*` next to `main` denotes that it is your current branch.
 
 2. You're going to create a new branch called `encrypt-stored-passwords` to work on your solution to the plain-text passwords issue. In your terminal, go ahead and type the following command:
 ```
