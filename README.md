@@ -77,7 +77,7 @@ Performing interactive testing means trying trying to find flaws in a running ap
 4. Next, test the Create User form, which should log you in automatically and forward you to the dashboard. Check cookie.
 5. Go ahead and log out checking that cookies were deleted again. 
 ### The Not-So-Happy Path 🙃 - Let's poke around and see if we can make the app do something it's not supposed to.
-1. Logging in takes us to '`dashboard.html`' which gives us the impression that it's secured but what happens if you try to navigate to '`dashboard.html`' directly?
+1. Logging in takes us to '`/pages/dashboard.html`' which gives us the impression that it's secured but what happens if you try to navigate to '`/pages/dashboard.html`' directly?
 2. Wow.. who needs a backdoor when the developer left the front one wide open!? Let's see if the app is only serving up web files or if we have access to system files as well. Navigate to the `/package.json` path in the url.
 3. Every NodeJS project has a `package.json` file that tells us everything about the project. Inspect the file and determine what dependencies the project has (that can later be targeted) and determine the projects start file.
 4. Navigate to the `/index.js` path in the url and inspect the file for potential next steps.
