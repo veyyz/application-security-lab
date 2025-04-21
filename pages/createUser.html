@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Application Security Lab</title>
+    <link rel="stylesheet" href="/styles/matrix.css" />
+</head>
+
+<body>
+    <div id="container">
+        <h1>Application Security Lab</h1>
+        <form id="createUserForm" action="/createUser" method="post">
+            <h2>Create user to access classroom services:</h2>
+            <div id="errorMsg"></div>
+            <div id="inputs">
+                <div id="fields">
+                    <input type="text" id="username" name="username" placeholder="user" required>
+                    <input type="password" id="password" name="password" placeholder="password" required>
+                </div>
+                <div id="createUser">
+                    <button type="submit">Create<br />User</button>
+                </div>
+            </div>
+            <a href="/">Login</a>
+        </form>
+
+        <script>
+            // Check for error in URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const error = urlParams.get('error');
+            const errorMsg = document.getElementById('errorMsg');
+
+            if (!!error) {
+
+                // if (error === 'authFailed') {
+                //     errorMsg.innerHTML = "Incorrect Username or Password!"
+                // }
+                // if (error === 'userExists') {
+                //     errorMsg.innerHTML = "User Exists!"
+                // }
+module.exports = server
+
+                errorMsg.innerHTML = error
+                errorMsg.style.display = 'block';
+            } 
+        </script>
+    </div>
+</body>
