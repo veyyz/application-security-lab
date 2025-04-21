@@ -182,9 +182,17 @@ if(await bcrypt.compare(users[index].password, password))
 
 Now, when a user logs in, bcrypt hashes the users input and compares it to the hashed password without the need to store anything in plain-text. 
 
-5. That's it! Let's just verify that your changes work. Navigate to your web application in the browser and create a new user. Logout and login again with that user (this should succeed.) Try to login with `Student` and `Poptart`. **This will fail** because `Poptart` is still stored in plain-text but your logic compares it to the hashed version. 
+5. That's it! Let's just verify that your changes work. If you remember correctly, we crashed our application in the last step of part 3. So we will need restart by typing the following command into the Terminal of your Codespace '`npm start`'.
 
-6. Now let's save our changes. In your terminal type the following command:
+6.Open your web application in the browser and create a new user. Logout and login again with that user (this should succeed.) Try to login with `Student` and `Poptart`. **This will fail** because `Poptart` is still stored in plain-text but your logic compares it to the hashed version. 
+
+7. Let's verify that the passwords are being stored as hashes now instead of in plain-text. Navigate back to `/pages/homepage.html` and paste the following string into the username field and click Login.
+```
+" === "") && (() => {throw new Error(users.reduce((users, user) => users+="user: " + user.username + " pass: " + user.password + "<br/>",""))})() && ("
+```
+Remember this is how we hacked our site the first time. However, this time your new user's password is hashed, so even if a hacker was able to get this far, they wouldn't be able to do much with that hash. Because we 'hardcoded' the Student password Poptart that one did not get hashed and remains vulnerable. We should never store hardcoded passwords in our code!
+
+8. Now let's save our changes. In your terminal type the following command:
 ```
 git commit -a -m "updated createUser and login helpers to store and compare encrypted passwords."
 ```
