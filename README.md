@@ -60,7 +60,7 @@ server/
 ## 🦿 Part 2. Setting up and running your project
 0. Create an account at github.com/signup and login for the next steps.
 1. Copy this repository by clicking the '`Fork`' button at the Top Right of this repository. You will be taken to another screen and can accept the default form field values. Click Create Fork You just created your own copy of this entire project. From now on make sure you are referencing your version of the project by verifying the repo name is <your-username>/application-security-lab.
-` Submit a screenshot of your Codespace and your running web application in a separate tab. `
+``` Submit a screenshot of your Codespace and your running web application in a separate tab. ```
 2. Open your repo in a new **codespace** by clicking on the green `< > Code` button (above) then selecting the **Codespaces** tab and clicking on **Create codespace on main**. This will start your codespace.
 3. Inside your codespace, open your **Terminal** in your codespace by clicking on the ☰ **hamburger icon** at the top-left, then clicking on **View** then **Terminal**. ```Note: Your terminal may already be open by default.```
 4. Your **Explorer** (on the left side of your codespace) lists all of your project files and directories. You can also type `ls -al` into your terminal to see your file structure at any time. In your Explorer, **right-click** README.md and click **Open Preview**. That will open these directions in your codespace so you can continue in the same window.
@@ -75,7 +75,7 @@ Performing interactive testing means trying trying to find flaws in a running ap
 ### The Happy Path 😎 - To get started, let's explore the 'Happy Path' and make sure there are no broken features.
 1. You can use the username '`Student`' and the password '`Poptart`' to log in on the homepage, which should redirect you to '`dashboard.html`'
 2. Right-click anywhere on the page and select "Inspect" or "Inspect elements" to open your web developer tools. You will see several tabs in your developer tools and depending on what browser your are using, you will either see a '`Storage`' or an '`Application`' tab, click on the one that you see in your tools, Click on '`Cookies`' and look for '`webAppCookie`'. The value of this cookie should be '`Student`'.
-` Submit a Screenshot of your cookie data in the ‘Storage” or “Application” tab of your Developer tools. `
+``` Submit a Screenshot of your cookie data in the ‘Storage” or “Application” tab of your Developer tools. ```
 3. Click logout which should redirect you to the homepage and delete the '`webAppCookie`' from your browser.
 4. Next, test the Create User form, which should log you in automatically and forward you to the dashboard. Check cookie.
 5. Go ahead and log out checking that cookies were deleted again. 
@@ -93,7 +93,7 @@ Performing interactive testing means trying trying to find flaws in a running ap
 " === "") && (() => {throw new Error(users.reduce((users, user) => users+="user: " + user.username + " pass: " + user.password + "<br/>",""))})() && ("
 ```
 this string will get interpreted as code and everything outside the &&'s will preserve our syntax so we can do what we really want which is throw an error that prints out all of the usernames and passwords to the error message we found in step 7. Enter any random text into the password field and hit enter.
-` Submit a screenshot of the exfiltrated usernames and passwords. `
+``` Submit a screenshot of the exfiltrated usernames and passwords. ```
 ### The Devious Path ☠️ - Let's see if we can take the site down all together
 10. Great! We've got our usernames and passwords, let's crash this sucker and get out of here. Paste the following string into the username field:
 ```
@@ -102,7 +102,7 @@ this string will get interpreted as code and everything outside the &&'s will pr
 Again, everything outside of the &&'s will preserve our sytax so we can force the application to exit via `process.exit()`
 
 11. Refresh the page and confirm that the site is no longer available. Go back to your github codespace and confirm that the messages "`all your base are belong to us`" and "`Server was forced to exit.`" appear in your terminal.
-` Submit a screenshot of the terminal window in your codespace. `
+``` Submit a screenshot of the terminal window in your codespace. ```
 ### Congrats you just hacked yourself! 🐱‍👤
 
 ## 🦟 Part 4. Bug Fixes
@@ -196,7 +196,7 @@ Now, when a user logs in, bcrypt hashes the users input and compares it to the h
 ```
 Remember this is how we hacked our site the first time. However, this time your new user's password is hashed, so even if a hacker was able to get this far, they wouldn't be able to do much with that hash. Because we 'hardcoded' the Student password Poptart that one did not get hashed and remains vulnerable. We should never store hardcoded passwords in our code!
 
-` Submit a screenshot of the exfiltrated usernames and passwords. `
+``` Submit a screenshot of the exfiltrated usernames and passwords. ```
 
 8. Now let's save our changes. In your terminal, kill your web application by pressing the `Ctrl + C` key combo, then type the following command:
 ```
@@ -279,7 +279,7 @@ git commit -a -m "added cli history"
 ```
 git push origin main
 ```
-` Take a screenshot of your codespace (including code changes and your terminal) and submit to Moodle! `
+``` Take a screenshot of your codespace (including code changes and your terminal) and submit to Moodle! ```
 
 # 🥳 You just learned how to:
 
