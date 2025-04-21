@@ -59,7 +59,7 @@ server/
 
 ## 🦿 Part 2. Setting up and running your project
 0. Create an account at github.com/signup and login for the next steps.
-1. Fork this repository by clicking the fork button at the Top Right of this repository. You will be taken to another screen and can accept the default field values. You just created your own copy of this entire project. From now on make sure you are referencing your version of the project by verifying the repo name is <your-username>/application-security-lab.
+1. Copy this repository by clicking the fork button at the Top Right of this repository. You will be taken to another screen and can accept the default form field values. You just created your own copy of this entire project. From now on make sure you are referencing your version of the project by verifying the repo name is <your-username>/application-security-lab.
 2. Open your repo in a new **codespace** by clicking on the green `< > Code` button (above) then selecting the **Codespaces** tab and clicking on **Create codespace on main**. This will start your codespace.
 3. Inside your codespace, open your **Terminal** in your codespace by clicking on the ☰ **hamburger icon** at the top-left, then clicking on **View** then **Terminal**. ```Note: Your terminal may already be open by default.```
 4. Your **Explorer** (on the left side of your codespace) lists all of your project files and directories. You can also type `ls -al` into your terminal to see your file structure at any time. In your Explorer, **right-click** README.md and click **Open Preview**. That will open these directions in your codespace so you can continue in the same window.
