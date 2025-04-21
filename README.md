@@ -192,7 +192,7 @@ Now, when a user logs in, bcrypt hashes the users input and compares it to the h
 ```
 Remember this is how we hacked our site the first time. However, this time your new user's password is hashed, so even if a hacker was able to get this far, they wouldn't be able to do much with that hash. Because we 'hardcoded' the Student password Poptart that one did not get hashed and remains vulnerable. We should never store hardcoded passwords in our code!
 
-8. Now let's save our changes. In your terminal type the following command:
+8. Now let's save our changes. In your terminal, kill your web application by pressing the `Ctrl + C` key combo, then type the following command:
 ```
 git commit -a -m "updated createUser and login helpers to store and compare encrypted passwords."
 ```
