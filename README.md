@@ -182,9 +182,9 @@ if(await bcrypt.compare(users[index].password, password))
 
 Now, when a user logs in, bcrypt hashes the users input and compares it to the hashed password without the need to store anything in plain-text. 
 
-5. That's it! Let's just verify that your changes work. If you remember correctly, we crashed our application in the last step of part 3. So we will need restart by typing the following command into the Terminal of your Codespace '`npm start`'.
+5. That's it! Let's just verify that your changes work. If you remember correctly, we crashed our application in the last step of part 3. So we will need restart by typing the following command into the Terminal of your Codespace `npm start`.
 
-6.Open your web application in the browser and create a new user. Logout and login again with that user (this should succeed.) Try to login with `Student` and `Poptart`. **This will fail** because `Poptart` is still stored in plain-text but your logic compares it to the hashed version. 
+6. Open your web application in the browser and create a new user. Logout and login again with that user (this should succeed.) Try to login with `Student` and `Poptart`. **This will fail** because `Poptart` is still stored in plain-text but your logic compares it to the hashed version. 
 
 7. Let's verify that the passwords are being stored as hashes now instead of in plain-text. Navigate back to `/pages/homepage.html` and paste the following string into the username field and click Login.
 ```
