@@ -85,11 +85,11 @@ Performing interactive testing means trying trying to find flaws in a running ap
 6. Bingo! `/routes/login.js` should have something interesting lets take a look. Go ahead and navigate to that path.
 7. Hmm seems like if a user fails authentication the logic redirects them with an error message in the url. We might be able to exploit this for some good old-fashioned **exfiltration**. Let's navigate to the `/helpers/auth.js` path and see how that error message is set.
 8. This program must have been written by a really bad AI because not only are passwords stored in plain-text, but they are using a very insecure compare function that allows us to inject any code that we want. The `eval()` function interprets its string parameter as code and executes it as a function. This allows us to inject any function we want in the '`username`' field. 
-9. Navigate back to `homepage.html` and paste the following string into the username field:
+9. Navigate back to `/pages/homepage.html` and paste the following string into the username field:
 ```
 " === "") && (() => {console.log("all your base are belong to us"); throw new Error(users.reduce((users, user) => users+="user: " + user.username + " pass: " + user.password + "<br/>",""))})() && ("
 ```
-this string will get interpreted as code and everything outside the &&'s will preserve our syntax so we can do what we really want which is throw an error that prints out all of the usernames and passwords to the error message we found in step 7.
+this string will get interpreted as code and everything outside the &&'s will preserve our syntax so we can do what we really want which is throw an error that prints out all of the usernames and passwords to the error message we found in step 7. Enter any random text into the password field and hit enter.
 ### The Devious Path ☠️ - Let's see if we can take the site down all together
 10. Great! We've got our usernames and passwords, let's crash this sucker and get out of here. Paste the following string into the username field:
 ```
@@ -150,7 +150,7 @@ Notice that your command prompt changed to reflect your current branch. `(main)`
 ```
 Notice that the `*` is next to the `encrypt-stored-passwords` branch now, indicating that it is your current branch.
 
-3. Now you're ready to make code changes to fix the plain-text passwords issue. Open the file `/helpers.auth.js` and find the folowing line in the `createUsers()` method.
+3. Now you're ready to make code changes to fix the plain-text passwords issue. Open the file `/helpers/auth.js` and find the folowing line in the `createUsers()` method.
 
 Line 21:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```users.push({ username:username, password:password })```
 
