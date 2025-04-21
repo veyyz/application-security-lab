@@ -183,7 +183,7 @@ Now, when a user logs in, bcrypt hashes the users input and compares it to the h
 
 5. That's it! Let's just verify that your changes work. Navigate to your web application in the browser and create a new user. Logout and login again with that user (this should succeed.) Try to login with `Student` and `Poptart`. **This will fail** because `Poptart` is still stored in plain-text but your logic compares it to the hashed version. 
 
-6. Now let's save our changes to git and apply them to the `main` branch of the project. In your terminal type the following command:
+6. Now let's save our changes. In your terminal type the following command:
 ```
 git commit -a -m "updated createUser and login helpers to store and compare encrypted passwords."
 ```
