@@ -1,0 +1,14 @@
+    1  npm start
+    2  git branch
+    3  git checkout -b "encrypt-stored-passwords"
+    4  git branch
+    5  npm start
+    6  git commit -a -m "updated createUser and login helpers to store and compare encrypted passwords."
+    7  git push --set-upstream origin encrypt-stored-passwords
+    8  git checkout main
+    9  git checkout encrypt-stored-passwords
+   10  git checkout main
+   11  git merge encrypt-stored-passwords
+   12  git status
+   13  history
+   14  history > cli-backup.txt
